@@ -1,0 +1,5 @@
+interface:
+  display_name: "Grill Program Design"
+  short_description: "Grill types, signatures, seams and tests"
+policy:
+  allow_implicit_invocation: true

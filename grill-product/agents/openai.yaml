@@ -1,0 +1,5 @@
+interface:
+  display_name: "Grill Product"
+  short_description: "Grill the product: users, scope, flows, states"
+policy:
+  allow_implicit_invocation: true

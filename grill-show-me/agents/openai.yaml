@@ -1,0 +1,5 @@
+interface:
+  display_name: "Grill Show Me"
+  short_description: "Grill a plan with a picture for every question"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Grill Architecture"
+  short_description: "Grill the architecture: layout, state, call stacks"
+policy:
+  allow_implicit_invocation: true

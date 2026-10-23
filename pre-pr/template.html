@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{Short title}}</title>
+<style>
+  :root { --bg:#fff; --fg:#1f2328; --muted:#59636e; --line:#d1d9e0; --code:#f6f8fa; --accent:#8250df; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --line:#30363d; --code:#161b22; --accent:#ab7df8; } }
+  body { background:var(--bg); color:var(--fg); font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; }
+  main { max-width:880px; margin:0 auto; padding:32px 16px 64px; }
+  h1 { font-size:26px; margin:0 0 4px; }
+  .byline { color:var(--muted); font-size:13px; margin-bottom:24px; }
+  h2 { font-size:19px; margin:36px 0 10px; padding-bottom:6px; border-bottom:1px solid var(--line); }
+  code { background:var(--code); padding:1px 5px; border-radius:4px; font-size:13px; }
+  .table-wrap { overflow-x:auto; }
+  table { border-collapse:collapse; width:100%; font-size:14px; }
+  th, td { border:1px solid var(--line); padding:6px 10px; text-align:left; vertical-align:top; }
+  th { background:var(--code); }
+  .new { color:var(--accent); font-size:12px; font-weight:600; }
+  .mermaid { background:var(--code); border-radius:8px; padding:12px; overflow-x:auto; }
+  li { margin:4px 0; }
+  h3.group { font-size:16px; margin:28px 0 0; color:var(--accent); }
+  h4 { font-size:14.5px; margin:20px 0 2px; }
+  .key { display:inline-block; font-size:11px; font-weight:600; color:var(--bg); background:var(--accent); border-radius:9px; padding:0 7px; vertical-align:2px; }
+  .file { font:12px ui-monospace,SFMono-Regular,Menlo,monospace; color:var(--muted); }
+  .num { color:var(--accent); margin-right:10px; }
+  .bridge { font-style:italic; color:var(--muted); margin:0 0 12px; }
+  .note { margin:4px 0 8px; color:var(--muted); font-size:14px; }
+  pre { background:var(--code); border:1px solid var(--line); border-radius:8px; padding:12px 14px; overflow-x:auto; font-size:13px; line-height:1.45; }
+  pre code { background:none; padding:0; }
+  pre code.hljs { background:none; padding:0; }
+</style>
+<link rel="stylesheet" media="(prefers-color-scheme: light)" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+<main>
+<h1>{{Issue #N — title}}</h1>
+<div class="byline">{{date}} · branch <code>{{branch}}</code> · {{committed / not committed}}</div>
+
+<h2><span class="num">1</span>Summary</h2>
+<p>{{What the change delivers, in 2–3 sentences. Then the check results.}}</p>
+
+<h2><span class="num">2</span>API contracts</h2>
+<p class="bridge">{{Start at the edges: where the change meets the outside.}}</p>
+<p>{{Lead: which boundaries changed, and whether the public API did.}}</p>
+<div class="table-wrap"><table>
+<tr><th>Contract</th><th>Direction</th><th>Outgoing type</th><th>Incoming type</th><th>Checked?</th><th>Compatible?</th></tr>
+<tr><td>{{name}}</td><td>{{A → B}}</td><td><code>{{Type}}</code></td><td><code>{{Type}}</code></td><td>{{decoded / untyped}}</td><td>{{yes / breaking: why}}</td></tr>
+</table></div>
+<h4>{{Contract name}}</h4>
+<div class="file">{{path}}</div>
+<pre><code class="language-json">{{exact request / message / setting shape}}</code></pre>
+<pre><code class="language-typescript">{{type definitions behind it}}</code></pre>
+
+<h2><span class="num">3</span>Data types</h2>
+<p class="bridge">{{Those contracts are built from these types.}}</p>
+<p>Every type the change adds or changes, as defined in the source.</p>
+<h4>{{TypeName}}</h4>
+<div class="file">{{path}}</div>
+<p class="note">{{What it holds, one line.}}</p>
+<pre><code class="language-typescript">{{HTML-escaped definition}}</code></pre>
+
+<h2><span class="num">4</span>How it flows</h2>
+<p class="bridge">{{How a change travels through them.}}</p>
+<pre class="mermaid">
+sequenceDiagram
+    participant A
+    participant B
+    A->>B: {{step}}
+</pre>
+<p>{{One sentence on how to read it.}}</p>
+
+<!-- Optional behaviour section: <h2>…</h2> + bridge + tables for mappings or per-case rules. -->
+
+<h2><span class="num">5</span>Key code</h2>
+<p class="bridge">{{Now the implementation, in the same order.}}</p>
+<p>Every piece of the change, in the order it flows. <span class="key">key</span> marks the ones that carry the design; the rest is supporting code that explains itself.</p>
+<h3 class="group">{{Layer}}</h3>
+<h4>{{What this shows}} <span class="key">key</span></h4>
+<div class="file">{{path}}</div>
+<p class="note">{{Why it matters, one line.}}</p>
+<pre><code class="language-typescript">{{HTML-escaped code}}</code></pre>
+
+<h2><span class="num">6</span>What changed</h2>
+<ul><li><b>{{Area}}:</b> {{change}}</li></ul>
+
+<h2><span class="num">7</span>Caveats and next steps</h2>
+<ul><li><b>{{Caveat}}:</b> {{detail}}</li></ul>
+<h2><span class="num">8</span>Important files</h2>
+<p class="bridge">For reference: every file the change touches.</p>
+<div class="table-wrap"><table>
+<tr><th>File</th><th>What it does</th></tr>
+<tr><td><code>{{path}}</code> <span class="new">new</span></td><td>{{responsibility}}</td></tr>
+</table></div>
+
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default' });
+</script>
+</body>
+</html>

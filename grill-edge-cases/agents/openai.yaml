@@ -1,0 +1,5 @@
+interface:
+  display_name: "Grill Edge Cases"
+  short_description: "Hunt edge cases and decide each one"
+policy:
+  allow_implicit_invocation: true
