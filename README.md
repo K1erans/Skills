@@ -13,7 +13,6 @@ Skills I use for my agents.
 | [`grill-product`](pk/grill-product/) | Grill a plan through the product lens (users, scope, flows, states, wording), with a picture for every question. Use when the user wants the product or user exp |
 | [`grill-program-design`](pk/grill-program-design/) | Grill a plan through the program design lens (types, method signatures, seams, test approach), with a picture for every question. Use when the user wants a modu |
 | [`grill-show-me`](pk/grill-show-me/) | Grill the user with a picture of the options for every question, lens by lens through product, architecture, program design and edge cases, recording ADRs and t |
-| [`jrep-reuse`](pk/jrep-reuse/) | Before writing a new function, method, type or helper, run `jrep reuse` to check whether existing code already does it or could be extended to, so you build on |
 | [`jrep`](pk/jrep/) | Find code by what it does with jrep, scoped to the folders most likely to hold it so each search costs less. Use when looking for where a behaviour is implement |
 | [`post-pr`](pk/post-pr/) | After a PR is reviewed (Greptile, bots or people), explain each review finding in plain terms: what it means, a concrete scenario of what would go wrong, whethe |
 | [`pre-pr`](pk/pre-pr/) | Before opening a PR, check the branch against its issue, run the checks, and open a one-page HTML summary that tells the change as a story: API contracts and ty |

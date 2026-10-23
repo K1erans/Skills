@@ -9,7 +9,6 @@ My personal skills. Each skill is its own folder with a `SKILL.md` inside.
 - [`grill-product`](grill-product/)
 - [`grill-program-design`](grill-program-design/)
 - [`grill-show-me`](grill-show-me/)
-- [`jrep-reuse`](jrep-reuse/)
 - [`jrep`](jrep/)
 - [`post-pr`](post-pr/)
 - [`pre-pr`](pre-pr/)
